@@ -1,92 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .error {
-            color: red;
-            font-size: 12px;
-        }
-        .valid {
-            border: 2px solid green;
-        }
-        .invalid {
-            border: 2px solid red;
-        }
-    </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">facebook</div>
+      <div class="login-form">
+        <div class="login-input-div">
+          <div class="label">email or phone</div>
+          <input type="text" class="login-input" /><br />
+          <input type="checkbox" class="keep-me-logged-in" />
+          <label class="light-blue">keep me logged in</label>
+        </div>
+        <div>   
+          <div class="label">password</div>
+          <input type="password" class="login-input" /><br />
+          <label class="light-blue"
+            ><a href="#" class="forget-p">forgot your password?</a></label
+          >
+        </div>
+        <div class="login-btn">
+          <button>login</button>
+        </div>
+      </div>
+    </nav>
     <div class="container">
-        <h2>Registration</h2>
-        <form id="registrationForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" required>
-            <br><br>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
-            <div id="emailError" class="error"></div>
-            <br><br>
-            
-            <label for="password">Password:</label>
-            <input type="password" id="password" required>
-            <br><br>
-            
-            <label for="confirmPassword">Password again:</label>
-            <input type="password" id="confirmPassword" required>
-            <div id="passwordError" class="error"></div>
-            <br><br>
-            
-            <button type="submit">Sign Up</button>
-        </form>
+     <div class="content-body">
+        <h1>Connect with friends and the <br>world around you on facebook</h1>
+        <img src="./imgfb.png" class="fb-content-image">
+     </div>
+     <div class="signup-body">
+        <h1 class="sign-up-h1">Sign up</h1>
+        <div class="gray"><p>it's free and always will be</p>
+        </div>
+        <div class="usernames">
+            <input type="text" class="inputname" placeholder="first name">
+            <input type="text" class="inputname" placeholder="last name"></div>
+            <div class="signupemail">
+                <input type="text" class="inputemail" placeholder="email or mobile number">
+            </div>
+            <div class="signupemail">
+                <input type="text" class="inputemail" placeholder="re enter email or mobile number">
+            </div>
+            <div class="signup-password">
+                <input type="password" class="inputpassword" placeholder="new password"> 
+            </div>
+            <h3 class="birthday-h3">birthday</h3>
+            <div class="birthday">
+              <div class="inputdays">
+                <select name="days" id="days">
+          <option value="00">days</option>
+          <option value="01">1</option>
+          <option value="02">2</option>
+          <option value="03">3</option>
+          <option value="04">4</option>
+          <option value="05">5</option>
+          <option value="06">6</option>
+          <option value="07">7</option>
+          <option value="08">8</option>
+          <option value="09">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+                </select>
+              </div>
+              <div class="years">
+                <select name="year" id="year">
+                  <option value="00">years</option>
+                  <option value="1">2024</option>
+                  <option value="2">2023</option>
+                  <option value="3">2022</option>
+                  <option value="4">2021</option>
+                  <option value="5">2020</option>
+                  <option value="6">2019</option>
+                  <option value="7">2018</option>
+                  <option value="8">2017</option>
+                  <option value="9">2016</option>
+                  <option value="10">2015</option>
+                  <option value="11">2014</option>
+                  <option value="12">2013</option>
+                  <option value="13">2012</option>
+                  <option value="14">2011</option>
+                  <option value="15">2010</option>
+                  <option value="16">2009</option>
+                  <option value="17">2008</option>
+                  <option value="18">2007</option>
+                  <option value="19">2006</option>
+                  <option value="20">2005</option>
+                  <option value="21">2004</option>
+                  <option value="22">2003</option>
+                  <option value="23">2002</option>
+                  <option value="24">2001</option>
+                  <option value="25">2000</option>
+                </select>
+              </div>
+              <div class="month">
+                <select name="month" id="month">
+                  <option value="00">months</option>
+                  <option value="01">January</option>
+                  <option value="02">February</option>
+                  <option value="03">March</option>
+                  <option value="04">April</option>
+                  <option value="05">May</option>
+                  <option value="06">June</option>
+                  <option value="07">July</option>
+                  <option value="08">August</option>
+                  <option value="09">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
+              </div>
+              <div class="whyneedbd">
+                <p>why do i need to provide my<br>birthday</p>
+              </div>
+            </div>
+            <div class="gender">
+              <input type="radio" name="female" id="female"><span class="genderlabel">female</span>
+              <input type="radio" name="male" id="male"><span class="genderlabel">male</span>
+            </div>
+            <div class="ppolicy">
+              <p>by clicking sign up you agree our <span class="bolddark">terms</span>and that you have <br>read our <span class="bolddark">data use policy</span>,inculding our <span class="bolddark">cookie use</span></p>
+            </div>
+            <div class="signupbutton">
+              <button class="signupbtn">sign up</button>
+            </div>
+            <br>
+            <hr>
+            <div class="craetepagecel">
+              <p><span class="bolddark">craete a page </span>for a celebrity, brand or</p>
+            </div>
+        </div>
     </div>
+  
+</div>
+     <script>
 
-    <script>
-        document.getElementById("registrationForm").addEventListener("input", function() {
-            let email = document.getElementById("email");
-            let password = document.getElementById("password");
-            let confirmPassword = document.getElementById("confirmPassword");
-            let emailError = document.getElementById("emailError");
-            let passwordError = document.getElementById("passwordError");
-            
-            // Email validation
-            if (email.value.includes("@") && email.value.includes(".")) {
-                email.classList.add("valid");
-                email.classList.remove("invalid");
-                emailError.textContent = "";
-            } else {
-                email.classList.add("invalid");
-                email.classList.remove("valid");
-                emailError.textContent = "Provide a valid email address";
-            }
-            
-            // Password match validation
-            if (password.value === confirmPassword.value && password.value.length > 0) {
-                confirmPassword.classList.add("valid");
-                confirmPassword.classList.remove("invalid");
-                passwordError.textContent = "";
-            } else {
-                confirmPassword.classList.add("invalid");
-                confirmPassword.classList.remove("valid");
-                passwordError.textContent = "Passwords don't match";
-            }
+         document.addEventListener("DOMContentLoaded", function () {
+    const formInputs = document.querySelectorAll("input");
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    formInputs.forEach(input => {
+        input.addEventListener("input", function () {
+            validateInput(input);
         });
-    </script>
-</body>
+    });
+
+    function validateInput(input) {
+        let isValid = true;
+        
+        if (input.type === "text" || input.type === "password") {
+            if (input.value.trim() === "") {
+                isValid = false;
+            }
+        }
+
+        if (input.classList.contains("inputemail")) {
+            if (!emailPattern.test(input.value)) {
+                isValid = false;
+            }
+        }
+
+        if (input.classList.contains("inputpassword")) {
+            if (input.value.length < 6) {
+                isValid = false;
+            }
+        }
+
+        if (isValid) {
+            input.style.border = "2px solid green";
+            input.style.borderRadius = "5px";
+        } else {
+            input.style.border = "2px solid red";
+            input.style.borderRadius = "5px";
+        }
+    }
+});
+
+     </script>
+  </body>
 </html>
