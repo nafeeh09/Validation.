@@ -351,7 +351,7 @@ margin-bottom: 20px;
 </div>
      <script>
 
-     document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const formInputs = document.querySelectorAll("input");
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const genderInputs = document.querySelectorAll("input[name='female'], input[name='male']");
@@ -386,46 +386,32 @@ margin-bottom: 20px;
             }
         }
 
-        if (isValid) {
-            input.style.border = "2px solid green";
-            input.style.borderRadius = "5px";
-        } else {
-            input.style.border = "2px solid red";
-            input.style.borderRadius = "5px";
-        }
+        input.style.border = isValid ? "2px solid green" : "2px solid red";
+        input.style.borderRadius = "5px";
     }
 
     function validateGender() {
         let isChecked = [...genderInputs].some(input => input.checked);
         genderInputs.forEach(input => {
-            if (isChecked) {
-                input.style.outline = "2px solid green";
-            } else {
-                input.style.outline = "2px solid red";
-            }
+            input.style.outline = isChecked ? "2px solid green" : "2px solid red";
+            input.style.borderRadius = "5px";
         });
     }
 
     function validateDOB() {
-        if (daySelect.value === "00" || monthSelect.value === "00" || yearSelect.value === "00") {
-            daySelect.style.border = "2px solid red";
-            monthSelect.style.border = "2px solid red";
-            yearSelect.style.border = "2px solid red";
-        } else {
-            daySelect.style.border = "2px solid green";
-            monthSelect.style.border = "2px solid green";
-            yearSelect.style.border = "2px solid green";
-        }
+        const isInvalid = daySelect.value === "00" || monthSelect.value === "00" || yearSelect.value === "00";
+        [daySelect, monthSelect, yearSelect].forEach(select => {
+            select.style.border = isInvalid ? "2px solid red" : "2px solid green";
+            select.style.borderRadius = "5px";
+        });
     }
 
-    genderInputs.forEach(input => {
-        input.addEventListener("change", validateGender);
-    });
-
+    genderInputs.forEach(input => input.addEventListener("change", validateGender));
     daySelect.addEventListener("change", validateDOB);
     monthSelect.addEventListener("change", validateDOB);
     yearSelect.addEventListener("change", validateDOB);
 });
+
      </script>
   </body>
 </html>
