@@ -351,9 +351,13 @@ margin-bottom: 20px;
 </div>
      <script>
 
-         document.addEventListener("DOMContentLoaded", function () {
+     document.addEventListener("DOMContentLoaded", function () {
     const formInputs = document.querySelectorAll("input");
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const genderInputs = document.querySelectorAll("input[name='female'], input[name='male']");
+    const daySelect = document.getElementById("days");
+    const monthSelect = document.getElementById("month");
+    const yearSelect = document.getElementById("year");
 
     formInputs.forEach(input => {
         input.addEventListener("input", function () {
@@ -390,8 +394,38 @@ margin-bottom: 20px;
             input.style.borderRadius = "5px";
         }
     }
-});
 
+    function validateGender() {
+        let isChecked = [...genderInputs].some(input => input.checked);
+        genderInputs.forEach(input => {
+            if (isChecked) {
+                input.style.outline = "2px solid green";
+            } else {
+                input.style.outline = "2px solid red";
+            }
+        });
+    }
+
+    function validateDOB() {
+        if (daySelect.value === "00" || monthSelect.value === "00" || yearSelect.value === "00") {
+            daySelect.style.border = "2px solid red";
+            monthSelect.style.border = "2px solid red";
+            yearSelect.style.border = "2px solid red";
+        } else {
+            daySelect.style.border = "2px solid green";
+            monthSelect.style.border = "2px solid green";
+            yearSelect.style.border = "2px solid green";
+        }
+    }
+
+    genderInputs.forEach(input => {
+        input.addEventListener("change", validateGender);
+    });
+
+    daySelect.addEventListener("change", validateDOB);
+    monthSelect.addEventListener("change", validateDOB);
+    yearSelect.addEventListener("change", validateDOB);
+});
      </script>
   </body>
 </html>
